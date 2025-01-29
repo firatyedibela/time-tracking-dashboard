@@ -106,13 +106,13 @@ function createTaskCard(title, current, prev, img) {
 
   reportItem.innerHTML = `
     <div class="report__task-img-container">
-      <img src="${img}" class="report__task-img" >
+      <img src="${img}" class="report__task-img"  alt="${title} background image">
     </div>
     <div class="report__task-info">
       <div class="report__task-info-header">
         <h2 class="report__task-title">${title}</h2>
-        <button class="report__task-options-btn">
-          <img src="${optionsBtn}">
+        <button class="report__task-options-btn" aria-label="Options">
+          <img src="${optionsBtn} alt="Options icon">
         </button>
       </div>
       <div class="report__task-hours">
