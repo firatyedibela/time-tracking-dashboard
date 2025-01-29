@@ -112,7 +112,7 @@ function createTaskCard(title, current, prev, img) {
       <div class="report__task-info-header">
         <h2 class="report__task-title">${title}</h2>
         <button class="report__task-options-btn" aria-label="Options">
-          <img src="${optionsBtn} alt="Options icon">
+          <img src="${optionsBtn}" alt="Options icon">
         </button>
       </div>
       <div class="report__task-hours">
