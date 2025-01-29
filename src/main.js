@@ -1,10 +1,10 @@
-import optionsBtn from '/images/icon-ellipsis.svg';
-import workSvg from '/images/icon-work.svg';
-import playSvg from '/images/icon-play.svg';
-import studySvg from '/images/icon-study.svg';
-import exerciseSvg from '/images/icon-exercise.svg';
-import socialSvg from '/images/icon-social.svg';
-import selfCareSvg from '/images/icon-self-care.svg';
+import optionsBtn from '../images/icon-ellipsis.svg';
+import workSvg from '../images/icon-work.svg';
+import playSvg from '../images/icon-play.svg';
+import studySvg from '../images/icon-study.svg';
+import exerciseSvg from '../images/icon-exercise.svg';
+import socialSvg from '../images/icon-social.svg';
+import selfCareSvg from '../images/icon-self-care.svg';
 
 /**
  * Review styles, check how you implemented that card styles
