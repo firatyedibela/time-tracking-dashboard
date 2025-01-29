@@ -20,7 +20,7 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 ### Links
 
 - Solution URL: [GitHub Repository](https://github.com/firatyedibela/time-tracking-dashboard)
-- Live Site URL: [Live Site](https://firatyedibela.github.io/time-tracking-dashboard/)
+- Live Site URL: [Live Site](https://time-tracking-dashboard-one-mocha.vercel.app)
 
 ## My process
 
