@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Manrope:wght@200..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Rubik;
+  background-color: hsl(226, 45%, 10%);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.report {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 255px);
+}
+.report__item {
+  background-color: hsl(235, 46%, 20%);
+}
+.report__item--sidebar {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  border-radius: 15px;
+}
+.report__person-info {
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 15px;
+  padding: 32px 0 80px 32px;
+}
+.report__person-avatar {
+  width: 78px;
+  height: 78px;
+  border: 3px solid white;
+  border-radius: 500px;
+  margin-bottom: 43px;
+}
+.report__title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.report__for {
+  font-size: 15px;
+  color: hsl(236, 100%, 87%);
+}
+.report__person-name {
+  font-size: 40px;
+  color: white;
+  font-weight: 300;
+}
+.report__period-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  padding: 32px;
+}
+.report__period-btn {
+  font-size: 18px;
+  background: none;
+  border: none;
+  color: hsl(235, 45%, 61%);
+  transition: color 150ms;
+}
+.report__period-btn--active, .report__period-btn:hover {
+  color: white;
+}
+.report__item--task-card {
+  border-radius: 15px;
+  height: 244px;
+  position: relative;
+}
+.report__task-img-container {
+  overflow: hidden;
+}
+.report__task-img {
+  margin-left: auto;
+  margin-right: 17px;
+}
+.report__task-info {
+  border-radius: 15px;
+  background-color: hsl(235, 46%, 20%);
+  padding: 32px;
+  position: absolute;
+  width: 100%;
+  top: 45px;
+  transition: background-color 150ms;
+}
+.report__task-info:hover {
+  cursor: pointer;
+  background-color: #33397a;
+}
+.report__task-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.report__task-title {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+}
+.report__task-options-btn {
+  background: none;
+  border: none;
+  height: 21px;
+}
+.report__task-options-btn:hover img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2%) hue-rotate(130deg) brightness(105%) contrast(101%);
+}
+.report__task-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.report__current-hours {
+  font-size: 56px;
+  color: white;
+  font-weight: 300;
+}
+.report__previous-hours {
+  font-size: 15px;
+  color: hsl(236, 100%, 87%);
+}
+.report__item--task-card[data-type=work] {
+  background-color: hsl(15, 100%, 70%);
+}
+.report__item--task-card[data-type=work] .report__task-img {
+  width: 78px;
+  height: 78px;
+  transform: translateY(-10px);
+}
+.report__item--task-card[data-type=play] {
+  background-color: hsl(195, 74%, 62%);
+}
+.report__item--task-card[data-type=play] .report__task-img {
+  width: 80px;
+  transform: translateY(-10px);
+}
+.report__item--task-card[data-type=study] {
+  background-color: hsl(348, 100%, 68%);
+}
+.report__item--task-card[data-type=study] .report__task-img {
+  width: 78px;
+  height: 78px;
+  transform: translateY(-10px);
+}
+.report__item--task-card[data-type=exercise] {
+  background-color: hsl(145, 58%, 55%);
+}
+.report__item--task-card[data-type=exercise] .report__task-img {
+  width: 80px;
+  transform: translateY(-2px);
+}
+.report__item--task-card[data-type=social] {
+  background-color: hsl(264, 64%, 52%);
+}
+.report__item--task-card[data-type=social] .report__task-img {
+  width: 73px;
+  transform: translateY(-15px);
+}
+.report__item--task-card[data-type="self care"] {
+  background-color: hsl(43, 84%, 65%);
+}
+.report__item--task-card[data-type="self care"] .report__task-img {
+  width: 72px;
+  transform: translateY(-16px);
+}
+
+@media (max-width: 1200px) {
+  .report {
+    grid-template-columns: repeat(2, 255px);
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+  }
+}
+@media (max-width: 660px) {
+  .report {
+    grid-template-columns: 327px;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+  .report__person-info {
+    padding: 32px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .report__person-avatar {
+    width: 64px;
+    height: 64px;
+    margin: 0;
+  }
+  .report__title-container {
+    gap: 4px;
+  }
+  .report__for {
+    font-size: 15px;
+  }
+  .report__person-name {
+    font-size: 24px;
+  }
+  .report__period-btn-group {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .report__item--task-card {
+    height: 160px;
+    margin-bottom: 22px;
+  }
+  .report__task-info {
+    top: 40px;
+    padding: 28px 24px;
+  }
+  .report__task-header {
+    margin-bottom: 6px;
+  }
+  .report__task-hours {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .report__current-hours {
+    font-size: 32px;
+  }
+}
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=main.css.map */
