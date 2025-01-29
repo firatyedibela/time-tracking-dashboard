@@ -6,10 +6,10 @@ import exerciseSvg from '/images/icon-exercise.svg';
 import socialSvg from '/images/icon-social.svg';
 import selfCareSvg from '/images/icon-self-care.svg';
 
-/* 
-  PROBLEM: We make unnecessary http requests every time we want to re-render the report
-  SOLUTION: Make the http request once the page is loaded and save data in a variable. Use that variable on next renders instead of fetching the data again
-*/
+/**
+ * Review styles, check how you implemented that card styles
+ *
+ */
 
 const imgArray = [
   workSvg,
@@ -21,6 +21,8 @@ const imgArray = [
 ];
 
 let displayState = 'daily';
+let cachedReportData = null;
+
 renderReportContent();
 
 document.querySelectorAll('.report__period-btn').forEach((button) => {
@@ -29,6 +31,7 @@ document.querySelectorAll('.report__period-btn').forEach((button) => {
 
 function handlePeriodBtnClick(e) {
   if (e.target.dataset.period !== displayState) {
+    // Change active button
     document
       .querySelector('.report__period-btn--active')
       .classList.toggle('report__period-btn--active');
@@ -47,7 +50,14 @@ async function renderReportContent() {
   removeAllCards();
 
   try {
-    const reportData = await getReportData();
+    // If data is already fetched before, use the cached data, else fetch the data
+    const reportData = cachedReportData || (await getReportData());
+
+    // If data is not cachhed, save it in cachedData
+    if (!cachedReportData) {
+      cachedReportData = reportData;
+    }
+
     reportData.forEach((task, idx) => {
       const title = task.title;
       const currentHours = task.timeframes[displayState].current;
@@ -84,7 +94,7 @@ function createTaskCard(title, current, prev, img) {
   // To target in css and specify color based on task name
   reportItem.dataset.type = title.toLowerCase();
 
-  // Based on display state, decide what comes after 'Last' => 'Last Day/Week/Month'
+  // Based on display state, decide what comes after Last => 'Last Day/Week/Month'
   let periodText = '';
   if (displayState === 'daily') {
     periodText = 'Day';
@@ -95,11 +105,11 @@ function createTaskCard(title, current, prev, img) {
   }
 
   reportItem.innerHTML = `
-    <div class="report__task-img-container report__task-img-container">
+    <div class="report__task-img-container">
       <img src="${img}" class="report__task-img" >
     </div>
     <div class="report__task-info">
-      <div class="report__task-header">
+      <div class="report__task-info-header">
         <h2 class="report__task-title">${title}</h2>
         <button class="report__task-options-btn">
           <img src="${optionsBtn}">

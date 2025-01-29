@@ -5,10 +5,13 @@
   gap: 30px;
   grid-template-columns: repeat(4, 255px);
 
+  &__item {
+    background-color: $dark-blue;
+  }
+
   &__item--sidebar {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    background-color: $dark-blue;
     border-radius: 15px;
   }
 
@@ -46,7 +49,6 @@
   &__period-btn-group {
     display: flex;
     flex-direction: column;
-    align-items: start;
     gap: 21px;
     padding: 32px;
   }
@@ -76,6 +78,7 @@
 
   &__task-img {
     margin-left: auto;
+    margin-right: 17px;
   }
 
   &__task-info {
@@ -93,7 +96,7 @@
     background-color: #33397a;
   }
 
-  &__task-header {
+  &__task-info-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -143,16 +146,15 @@
       width: 78px;
       height: 78px;
       transform: translateY(-10px);
-      margin-right: 17px;
     }
   }
+
   &__item--task-card[data-type='play'] {
     background-color: $soft-blue;
 
     .report__task-img {
       width: 80px;
       transform: translateY(-10px);
-      margin-right: 17px;
     }
   }
 
@@ -163,7 +165,6 @@
       width: 78px;
       height: 78px;
       transform: translateY(-10px);
-      margin-right: 17px;
     }
   }
 
@@ -173,7 +174,6 @@
     .report__task-img {
       width: 80px;
       transform: translateY(-2px);
-      margin-right: 17px;
     }
   }
 
@@ -183,7 +183,6 @@
     .report__task-img {
       width: 73px;
       transform: translateY(-15px);
-      margin-right: 17px;
     }
   }
 
@@ -193,7 +192,6 @@
     .report__task-img {
       width: 72px;
       transform: translateY(-16px);
-      margin-right: 17px;
     }
   }
 }
@@ -202,6 +200,7 @@
   .report {
     grid-template-columns: repeat(2, 255px);
     margin-top: 4rem;
+    margin-bottom: 6rem;
   }
 }
 
@@ -209,6 +208,7 @@
   .report {
     grid-template-columns: 327px;
     margin-top: 6rem;
+    margin-bottom: 6rem;
 
     &__person-info {
       padding: 32px;
@@ -242,6 +242,7 @@
 
     &__item--task-card {
       height: 160px;
+      margin-bottom: 22px;
     }
 
     &__task-info {
