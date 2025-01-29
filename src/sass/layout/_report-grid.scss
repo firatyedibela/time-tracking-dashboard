@@ -49,6 +49,7 @@
   &__period-btn-group {
     display: flex;
     flex-direction: column;
+    align-items: start;
     gap: 21px;
     padding: 32px;
   }
