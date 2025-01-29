@@ -74,7 +74,7 @@ async function renderReportContent() {
 
 async function getReportData() {
   try {
-    const response = await fetch('../public/data.json');
+    const response = await fetch('/data.json');
     if (!response.ok) {
       throw new Error(
         `Network error: ${response.status} - ${response.statusText}`
