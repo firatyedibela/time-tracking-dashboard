@@ -141,27 +141,27 @@
 
   &__item--task-card[data-type='play'] {
     background-color: $soft-blue;
-    background-image: url('../../../images/icon-play.svg');
+    background-image: url('/images/icon-play.svg');
   }
 
   &__item--task-card[data-type='study'] {
     background-color: $light-red;
-    background-image: url('../../../images/icon-study.svg');
+    background-image: url('/images/icon-study.svg');
   }
 
   &__item--task-card[data-type='exercise'] {
     background-color: $lime-green;
-    background-image: url('../../../images/icon-exercise.svg');
+    background-image: url('/images/icon-exercise.svg');
   }
 
   &__item--task-card[data-type='social'] {
     background-color: $violet;
-    background-image: url('../../../images/icon-social.svg');
+    background-image: url('/images/icon-social.svg');
   }
 
   &__item--task-card[data-type='self care'] {
     background-color: $soft-orange;
-    background-image: url('../../../images/icon-self-care.svg');
+    background-image: url('/images/icon-self-care.svg');
   }
 }
 
