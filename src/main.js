@@ -1,24 +1,9 @@
 import optionsBtn from '../images/icon-ellipsis.svg';
-import workSvg from '../images/icon-work.svg';
-import playSvg from '../images/icon-play.svg';
-import studySvg from '../images/icon-study.svg';
-import exerciseSvg from '../images/icon-exercise.svg';
-import socialSvg from '../images/icon-social.svg';
-import selfCareSvg from '../images/icon-self-care.svg';
 
 /**
  * Review styles, check how you implemented that card styles
- *
+ * Review code/logic again
  */
-
-const imgArray = [
-  workSvg,
-  playSvg,
-  studySvg,
-  exerciseSvg,
-  socialSvg,
-  selfCareSvg,
-];
 
 let displayState = 'daily';
 let cachedReportData = null;
@@ -62,9 +47,8 @@ async function renderReportContent() {
       const title = task.title;
       const currentHours = task.timeframes[displayState].current;
       const prevHours = task.timeframes[displayState].previous;
-      const img = imgArray[idx];
 
-      const taskCard = createTaskCard(title, currentHours, prevHours, img);
+      const taskCard = createTaskCard(title, currentHours, prevHours);
       container.appendChild(taskCard);
     });
   } catch (error) {
@@ -87,7 +71,7 @@ async function getReportData() {
   }
 }
 
-function createTaskCard(title, current, prev, img) {
+function createTaskCard(title, current, prev) {
   const reportItem = document.createElement('article');
   reportItem.className = 'report__item report__item--task-card';
 
@@ -105,9 +89,6 @@ function createTaskCard(title, current, prev, img) {
   }
 
   reportItem.innerHTML = `
-    <div class="report__task-img-container">
-      <img src="${img}" class="report__task-img"  alt="${title} background image">
-    </div>
     <div class="report__task-info">
       <div class="report__task-info-header">
         <h2 class="report__task-title">${title}</h2>

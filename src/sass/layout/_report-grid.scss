@@ -68,28 +68,22 @@
   }
 
   &__item--task-card {
-    border-radius: 15px;
+    border-radius: 15px 15px 20px 20px;
     height: 244px;
     position: relative;
-  }
-
-  &__task-img-container {
-    overflow: hidden;
-  }
-
-  &__task-img {
-    margin-left: auto;
-    margin-right: 17px;
+    background-repeat: no-repeat;
+    background-position: 90% -6%;
   }
 
   &__task-info {
     border-radius: 15px;
     background-color: $dark-blue;
     padding: 32px;
+    transition: background-color 150ms;
+
     position: absolute;
     width: 100%;
-    top: 45px;
-    transition: background-color 150ms;
+    bottom: 0;
   }
 
   &__task-info:hover {
@@ -142,58 +136,32 @@
 
   &__item--task-card[data-type='work'] {
     background-color: $light-orange;
-
-    .report__task-img {
-      width: 78px;
-      height: 78px;
-      transform: translateY(-10px);
-    }
+    background-image: url('../../../images/icon-work.svg');
   }
 
   &__item--task-card[data-type='play'] {
     background-color: $soft-blue;
-
-    .report__task-img {
-      width: 80px;
-      transform: translateY(-10px);
-    }
+    background-image: url('../../../images/icon-play.svg');
   }
 
   &__item--task-card[data-type='study'] {
     background-color: $light-red;
-
-    .report__task-img {
-      width: 78px;
-      height: 78px;
-      transform: translateY(-10px);
-    }
+    background-image: url('../../../images/icon-study.svg');
   }
 
   &__item--task-card[data-type='exercise'] {
     background-color: $lime-green;
-
-    .report__task-img {
-      width: 80px;
-      transform: translateY(-2px);
-    }
+    background-image: url('../../../images/icon-exercise.svg');
   }
 
   &__item--task-card[data-type='social'] {
     background-color: $violet;
-
-    .report__task-img {
-      width: 73px;
-      transform: translateY(-15px);
-    }
+    background-image: url('../../../images/icon-social.svg');
   }
 
   &__item--task-card[data-type='self care'] {
     background-color: $soft-orange;
-
-    .report__task-img {
-      width: 72px;
-      transform: translateY(-16px);
-    }
+    background-image: url('../../../images/icon-self-care.svg');
   }
 }
 
