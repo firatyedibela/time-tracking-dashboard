@@ -88,7 +88,7 @@ async function getReportData() {
 }
 
 function createTaskCard(title, current, prev, img) {
-  const reportItem = document.createElement('div');
+  const reportItem = document.createElement('article');
   reportItem.className = 'report__item report__item--task-card';
 
   // To target in css and specify color based on task name
