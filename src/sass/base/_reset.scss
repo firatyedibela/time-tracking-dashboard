@@ -1,5 +1,5 @@
-@use './typography';
-@use '../abstracts/variables' as *;
+@use "./typography";
+@use "../abstracts/variables" as *;
 
 *,
 *::after,
@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: Rubik;
+  font-family: Rubik, Arial, Helvetica, sans-serif;
   background-color: $very-dark-blue;
 }
 

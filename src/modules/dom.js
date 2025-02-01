@@ -1,11 +1,12 @@
-import optionsBtn from '../../images/icon-ellipsis.svg';
-import { getTimePeriodText } from './utils';
-import { getReportData } from './api';
-import { appState } from '../app';
+import optionsBtn from "../../images/icon-ellipsis.svg";
+import { getTimePeriodText } from "./utils";
+import { getReportData } from "./api";
+import { appState } from "../app";
 
 export async function renderReportContent() {
-  const container = document.querySelector('.report');
+  const container = document.querySelector(".report");
 
+  // Clear report content before rendering
   removeAllCards();
 
   try {
@@ -26,13 +27,13 @@ export async function renderReportContent() {
       container.appendChild(taskCard);
     });
   } catch (error) {
-    console.log('ERROR: ' + error.message);
+    console.log("ERROR: " + error.message);
   }
 }
 
 function createTaskCard(title, current, prev) {
-  const reportItem = document.createElement('article');
-  reportItem.className = 'report__item report__item--task-card';
+  const reportItem = document.createElement("article");
+  reportItem.className = "report__item report__item--task-card";
 
   // To target in css and specify color based on task name
   reportItem.dataset.type = title.toLowerCase();
@@ -59,7 +60,7 @@ function createTaskCard(title, current, prev) {
 }
 
 function removeAllCards() {
-  document.querySelectorAll('.report__item--task-card').forEach((element) => {
+  document.querySelectorAll(".report__item--task-card").forEach((element) => {
     if (element) {
       element.remove();
     }
@@ -68,8 +69,8 @@ function removeAllCards() {
 
 export function setActiveButton(element) {
   document
-    .querySelector('.report__period-btn--active')
-    .classList.remove('report__period-btn--active');
+    .querySelector(".report__period-btn--active")
+    .classList.remove("report__period-btn--active");
 
-  element.classList.add('report__period-btn--active');
+  element.classList.add("report__period-btn--active");
 }
